@@ -6,6 +6,11 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		16A7F9F72F63790100F18B2B /* OpenAPIRuntime in Frameworks */ = {isa = PBXBuildFile; productRef = 16A7F9F62F63790100F18B2B /* OpenAPIRuntime */; };
+		16A7F9FA2F63795800F18B2B /* OpenAPIURLSession in Frameworks */ = {isa = PBXBuildFile; productRef = 16A7F9F92F63795800F18B2B /* OpenAPIURLSession */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXContainerItemProxy section */
 		167636A92F62E91B009F64B2 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -29,9 +34,33 @@
 		167636B22F62E91B009F64B2 /* food-app-iosUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "food-app-iosUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
+/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
+		16A7F9F22F63768300F18B2B /* Exceptions for "food-app-ios" folder in "food-app-ios" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				"openapi-generator-config.yaml",
+			);
+			target = 167636982F62E91A009F64B2 /* food-app-ios */;
+		};
+/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
+
+/* Begin PBXFileSystemSynchronizedGroupBuildPhaseMembershipExceptionSet section */
+		16A7F9F32F63768300F18B2B /* Exceptions for "food-app-ios" folder in "Compile Sources" phase from "food-app-ios" target */ = {
+			isa = PBXFileSystemSynchronizedGroupBuildPhaseMembershipExceptionSet;
+			buildPhase = 167636952F62E91A009F64B2 /* Sources */;
+			membershipExceptions = (
+				"openapi-generator-config.yaml",
+			);
+		};
+/* End PBXFileSystemSynchronizedGroupBuildPhaseMembershipExceptionSet section */
+
 /* Begin PBXFileSystemSynchronizedRootGroup section */
 		1676369B2F62E91A009F64B2 /* food-app-ios */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				16A7F9F22F63768300F18B2B /* Exceptions for "food-app-ios" folder in "food-app-ios" target */,
+				16A7F9F32F63768300F18B2B /* Exceptions for "food-app-ios" folder in "Compile Sources" phase from "food-app-ios" target */,
+			);
 			path = "food-app-ios";
 			sourceTree = "<group>";
 		};
@@ -52,6 +81,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				16A7F9FA2F63795800F18B2B /* OpenAPIURLSession in Frameworks */,
+				16A7F9F72F63790100F18B2B /* OpenAPIRuntime in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -106,12 +137,15 @@
 			buildRules = (
 			);
 			dependencies = (
+				16A7F9FF2F637A9600F18B2B /* PBXTargetDependency */,
 			);
 			fileSystemSynchronizedGroups = (
 				1676369B2F62E91A009F64B2 /* food-app-ios */,
 			);
 			name = "food-app-ios";
 			packageProductDependencies = (
+				16A7F9F62F63790100F18B2B /* OpenAPIRuntime */,
+				16A7F9F92F63795800F18B2B /* OpenAPIURLSession */,
 			);
 			productName = "food-app-ios";
 			productReference = 167636992F62E91A009F64B2 /* food-app-ios.app */;
@@ -195,6 +229,11 @@
 			);
 			mainGroup = 167636902F62E91A009F64B2;
 			minimizedProjectReferenceProxies = 1;
+			packageReferences = (
+				16A7F9F42F6378BE00F18B2B /* XCRemoteSwiftPackageReference "swift-openapi-generator" */,
+				16A7F9F52F63790100F18B2B /* XCRemoteSwiftPackageReference "swift-openapi-runtime" */,
+				16A7F9F82F63795800F18B2B /* XCRemoteSwiftPackageReference "swift-openapi-urlsession" */,
+			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = 1676369A2F62E91A009F64B2 /* Products */;
 			projectDirPath = "";
@@ -265,6 +304,10 @@
 			isa = PBXTargetDependency;
 			target = 167636982F62E91A009F64B2 /* food-app-ios */;
 			targetProxy = 167636B32F62E91B009F64B2 /* PBXContainerItemProxy */;
+		};
+		16A7F9FF2F637A9600F18B2B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			productRef = 16A7F9FE2F637A9600F18B2B /* OpenAPIGenerator */;
 		};
 /* End PBXTargetDependency section */
 
@@ -605,6 +648,51 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		16A7F9F42F6378BE00F18B2B /* XCRemoteSwiftPackageReference "swift-openapi-generator" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/apple/swift-openapi-generator";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.10.4;
+			};
+		};
+		16A7F9F52F63790100F18B2B /* XCRemoteSwiftPackageReference "swift-openapi-runtime" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/apple/swift-openapi-runtime";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.11.0;
+			};
+		};
+		16A7F9F82F63795800F18B2B /* XCRemoteSwiftPackageReference "swift-openapi-urlsession" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/apple/swift-openapi-urlsession";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.2.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		16A7F9F62F63790100F18B2B /* OpenAPIRuntime */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 16A7F9F52F63790100F18B2B /* XCRemoteSwiftPackageReference "swift-openapi-runtime" */;
+			productName = OpenAPIRuntime;
+		};
+		16A7F9F92F63795800F18B2B /* OpenAPIURLSession */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 16A7F9F82F63795800F18B2B /* XCRemoteSwiftPackageReference "swift-openapi-urlsession" */;
+			productName = OpenAPIURLSession;
+		};
+		16A7F9FE2F637A9600F18B2B /* OpenAPIGenerator */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 16A7F9F42F6378BE00F18B2B /* XCRemoteSwiftPackageReference "swift-openapi-generator" */;
+			productName = "plugin:OpenAPIGenerator";
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 167636912F62E91A009F64B2 /* Project object */;
 }
