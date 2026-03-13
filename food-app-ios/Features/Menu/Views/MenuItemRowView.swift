@@ -5,39 +5,38 @@ struct MenuItemRowView: View {
     var namespace: Namespace.ID
 
     var body: some View {
-        HStack(spacing: 16) {
+        HStack(spacing: 12) {
             AsyncImage(url: URL(string: dish.imageName)) { phase in
                 switch phase {
                 case .empty:
                     ProgressView()
-                        .frame(width: 80, height: 80)
+                        .frame(width: 100)
                 case .success(let image):
                     image
                         .resizable()
                         .aspectRatio(contentMode: .fill)
-                        .frame(width: 80, height: 80)
-                        .clipShape(RoundedRectangle(cornerRadius: 12))
+                        .frame(width: 100)
+                        .clipped()
                         .matchedGeometryEffect(id: "image-\(dish.id)", in: namespace)
                 case .failure:
                     Image(systemName: "photo")
                         .font(.system(size: 40))
-                        .foregroundStyle(.secondary)
-                        .frame(width: 80, height: 80)
-                        .background(Color.secondary.opacity(0.1))
-                        .clipShape(RoundedRectangle(cornerRadius: 12))
+                        .foregroundStyle(.white.opacity(0.5))
+                        .frame(width: 100)
+                        .background(Color.white.opacity(0.1))
                 @unknown default:
                     EmptyView()
                 }
             }
 
-            VStack(alignment: .leading, spacing: 6) {
+            VStack(alignment: .leading, spacing: 4) {
                 Text(dish.name)
                     .font(.headline)
-                    .foregroundStyle(.primary)
+                    .foregroundStyle(.white)
 
                 Text(dish.dishDescription)
                     .font(.subheadline)
-                    .foregroundStyle(.secondary)
+                    .foregroundStyle(.white.opacity(0.7))
                     .lineLimit(2)
 
                 HStack(spacing: 12) {
@@ -45,27 +44,42 @@ struct MenuItemRowView: View {
                         Image(systemName: "star.fill")
                             .foregroundStyle(.yellow)
                         Text(String(format: "%.1f", dish.rating))
-                            .font(.subheadline)
                             .fontWeight(.medium)
                     }
+                    .foregroundStyle(.yellow)
 
                     HStack(spacing: 4) {
                         Image(systemName: "clock")
                         Text("\(dish.preparationTime) min")
-                            .font(.subheadline)
                     }
-                    .foregroundStyle(.secondary)
+                    .foregroundStyle(.white.opacity(0.7))
 
                     Spacer()
 
                     Text("$\(String(format: "%.2f", dish.price))")
                         .font(.headline)
-                        .foregroundStyle(.primary)
+                        .foregroundStyle(.white)
+                }
+                .font(.caption)
+            }
+            .padding(.vertical, 12)
+            .padding(.trailing, 12)
+        }
+        .frame(height: 100)
+        .background {
+            ZStack {
+                Color.black.opacity(0.6)
+                AsyncImage(url: URL(string: dish.imageName)) { phase in
+                    if case .success(let image) = phase {
+                        image
+                            .resizable()
+                            .aspectRatio(contentMode: .fill)
+                            .blur(radius: 20)
+                            .overlay(Color.black.opacity(0.4))
+                    }
                 }
             }
         }
-        .padding()
-        .background(Color.secondary.opacity(0.05))
         .clipShape(RoundedRectangle(cornerRadius: 16))
     }
 }
@@ -77,7 +91,7 @@ extension Dish {
         name: "Pollo con arroz",
         description: "Porcion baja en calorías de pollo y arroz",
         price: 1900,
-        imageName: "https://upload.wikimedia.org/wikipedia/commons/3/33/Fresh_made_pasta_juliane_fry.jpg",
+        imageName: "https://picsum.photos/id/312/400/400",
         category: "some",
         rating: 4.7,
         preparationTime: 60,
