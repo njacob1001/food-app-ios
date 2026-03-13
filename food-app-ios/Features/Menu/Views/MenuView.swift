@@ -28,7 +28,6 @@ struct MenuView: View {
     }
 
     var body: some View {
-        NavigationStack {
             ScrollView {
                 VStack(spacing: 20) {
                     VStack(alignment: .leading, spacing: 8) {
@@ -107,7 +106,7 @@ struct MenuView: View {
 //                    }
 //                }
 //            }
-        }
+        
     }
 
     private func addSampleDishes() {
