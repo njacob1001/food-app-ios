@@ -26,7 +26,7 @@ struct food_app_iosApp: App {
 
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            ContentView().environment(\.apiClient, APIClient.shared.client)
         }
         .modelContainer(sharedModelContainer)
     }
