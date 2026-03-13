@@ -31,11 +31,11 @@ struct MenuView: View {
             ScrollView {
                 VStack(spacing: 20) {
                     VStack(alignment: .leading, spacing: 8) {
-                        Text("Food Delivery")
+                        Text("Almuerzos")
                             .font(.largeTitle)
                             .fontWeight(.bold)
 
-                        Text("Order your favorite dishes")
+                        Text("Elige entre los diferentes menús")
                             .font(.subheadline)
                             .foregroundStyle(.secondary)
                     }
@@ -98,14 +98,23 @@ struct MenuView: View {
             .navigationDestination(for: Dish.self) { dish in
                 MenuItemDetailView(dish: dish, namespace: namespace)
             }
+            .toolbar {
+                ToolbarItem(placement:.cancellationAction) {
+                    Button {
+                        // TODO: Navigate to profile
+                    } label: {
+                        Label("Profile", systemImage: "person.crop.circle.fill")
+                    }
+                }
+                ToolbarItem(placement: .primaryAction) {
+                    Button {
+                        // TODO: Navigate to shopping cart
+                    } label: {
+                        Label("Cart", systemImage: "cart")
+                    }
+                }
+            }
             .searchable(text: $searchText, prompt: "Buscar platos")
-//            .toolbar {
-//                ToolbarItem {
-//                    Button(action: addSampleDishes) {
-//                        Label("Add Dishes", systemImage: "plus")
-//                    }
-//                }
-//            }
         
     }
 
@@ -119,6 +128,8 @@ struct MenuView: View {
 }
 
 #Preview {
-    MenuView()
-        .modelContainer(for: Dish.self, inMemory: true)
+    NavigationStack {
+        MenuView()
+    }
+    .modelContainer(for: Dish.self, inMemory: true)
 }

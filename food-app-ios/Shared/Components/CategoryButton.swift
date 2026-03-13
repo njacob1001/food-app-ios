@@ -15,7 +15,7 @@ struct CategoryButton: View {
                 .background(isSelected ? Color.accentColor : Color.secondary.opacity(0.1))
                 .foregroundStyle(isSelected ? .white : .primary)
                 .clipShape(Capsule())
-        }
+        }.buttonStyle(.plain)
     }
 }
 
