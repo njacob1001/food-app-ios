@@ -12,6 +12,10 @@
 - **UI framework:** SwiftUI (no UIKit unless strictly necessary)
 - **Architecture:** Model-View (MV) with feature folders
 - **Minimum deployment target:** iOS 17 — use `@Observable` freely, no `ObservableObject`
+- **app folder**: `food-app-ios`
+- **test folder**: `food-app-iosTests`
+- **UI test folder**: `food-app-iosUITests`
+
 
 ---
 
