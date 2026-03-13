@@ -14,12 +14,4 @@ class APIClient {
             transport: URLSessionTransport()
         )
     }
-    
-    private demotesting() {
-        client.post_sol_auth_sol_register(Operations.post_sol_auth_sol_register.Input(
-            body: <#T##Operations.post_sol_auth_sol_register.Input.Body#>(
-                Data()
-            )
-        ))
-    }
 }

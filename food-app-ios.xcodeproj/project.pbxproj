@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		16A7F9F72F63790100F18B2B /* OpenAPIRuntime in Frameworks */ = {isa = PBXBuildFile; productRef = 16A7F9F62F63790100F18B2B /* OpenAPIRuntime */; };
 		16A7F9FA2F63795800F18B2B /* OpenAPIURLSession in Frameworks */ = {isa = PBXBuildFile; productRef = 16A7F9F92F63795800F18B2B /* OpenAPIURLSession */; };
+		16A7FA112F63865D00F18B2B /* CLAUDE.md in Resources */ = {isa = PBXBuildFile; fileRef = 16A7FA0F2F63865400F18B2B /* CLAUDE.md */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -32,6 +33,7 @@
 		167636992F62E91A009F64B2 /* food-app-ios.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "food-app-ios.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		167636A82F62E91B009F64B2 /* food-app-iosTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "food-app-iosTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		167636B22F62E91B009F64B2 /* food-app-iosUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "food-app-iosUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		16A7FA0F2F63865400F18B2B /* CLAUDE.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = CLAUDE.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
@@ -106,6 +108,7 @@
 		167636902F62E91A009F64B2 = {
 			isa = PBXGroup;
 			children = (
+				16A7FA0F2F63865400F18B2B /* CLAUDE.md */,
 				1676369B2F62E91A009F64B2 /* food-app-ios */,
 				167636AB2F62E91B009F64B2 /* food-app-iosTests */,
 				167636B52F62E91B009F64B2 /* food-app-iosUITests */,
@@ -251,6 +254,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				16A7FA112F63865D00F18B2B /* CLAUDE.md in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
