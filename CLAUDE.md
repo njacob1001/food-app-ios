@@ -15,6 +15,7 @@
 - **app folder**: `food-app-ios`
 - **test folder**: `food-app-iosTests`
 - **UI test folder**: `food-app-iosUITests`
+- **Localization texts language**: All language texts in the app must be in spanish colombia
 
 
 ---
