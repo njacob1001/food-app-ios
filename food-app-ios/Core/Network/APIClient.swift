@@ -4,9 +4,9 @@ import SwiftUI
 
 class APIClient {
     static let shared = APIClient()
-    
+
     let client: Client
-    
+
     private init() {
         client = Client(
             serverURL: URL(string: "https://tuapi.com")!,
